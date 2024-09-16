@@ -1,7 +1,8 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
+about: 'Create a report to help us reproduce and improve. Remember to put the target
+  repository in the title. '
+title: "[Repository Info] Issue Details"
 labels: ''
 assignees: ''
 
