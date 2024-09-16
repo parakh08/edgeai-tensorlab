@@ -2,38 +2,34 @@
 name: Bug report
 about: 'Create a report to help us reproduce and improve. Remember to put the target
   repository in the title. '
-title: "[Repository Info] Issue Details"
+title: "[Repository Name] Issue Title"
 labels: ''
 assignees: ''
 
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of what the bug is. Please try to add a minimal example to reproduce the error. Avoid any extra data and please include the imports to make the debug process efficient. For example : 
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+```
+# All necessary imports at the beginning
+import torch
 
-**Expected behavior**
+# A succinct reproducing example trimmed down to the essential parts:
+t = torch.rand(5, 10)  # Note: the bug is here, we should pass requires_grad=True
+t.sum().backward()
+```
+
+**Expected behavior and Actual Behaviour**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Versions**
+Please run the following and paste the output below.
+```
+wget https://raw.githubusercontent.com/pytorch/pytorch/main/torch/utils/collect_env.py
+# For security purposes, please check the contents of collect_env.py before running it.
+python collect_env.py
+```
 
 **Additional context**
-Add any other context about the problem here.
+If the problem is some device specific, that could be mentioned over here along with some other context information.
